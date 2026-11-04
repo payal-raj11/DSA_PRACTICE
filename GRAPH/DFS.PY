@@ -1,0 +1,19 @@
+def DFS(graph, node, visited):
+    if node not in visited:
+        print(node, end=" ")
+        visited.append(node)
+
+        for neighbour in graph[node]:
+            DFS(graph, neighbour, visited)
+
+
+graph = {
+    0: [1, 2],
+    1: [0, 3, 4],
+    2: [0, 5],
+    3: [1],
+    4: [1, 5],
+    5: [2, 4]
+}
+
+DFS(graph, 0, [])
